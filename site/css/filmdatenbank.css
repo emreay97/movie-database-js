@@ -1,0 +1,25 @@
+table,th,td{
+    border: 1px solid;
+}
+
+.movie-table{
+    width: 100%;
+}
+
+
+.nav-container{
+    background-color: #0080ff;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 2em;
+}
+
+
+.movie-container{
+    margin-top:3rem;
+    font-size: 1.5rem;
+}
+
+.navbar  p{
+font-size: 2em;
+}

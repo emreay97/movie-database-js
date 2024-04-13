@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de" data-bs-theme="dark">
+
+<head>
+    <title>Film JSON Datenbank</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="css/bootstrap/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/stdpattern.css" rel="stylesheet" type="text/css">
+    <link href="css/filmdatenbank.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <script defer src="scripts/filmdb.js"></script>
+
+    <div class="container-fluid nav-container">
+        <div class="row">
+            <div class="col-12">
+                <p>Filmdatenbank</p> 
+            </div>
+        </div>
+    </div>
+
+        <div class="container-fluid movie-container">
+            <table id="movie-table">
+                <thead>
+                    <tr>
+                        <th scope="col" onclick="sortColumn(0)">Title</th>
+                        <th scope="col" onclick="sortColumn(1)">Regisseur</th>
+                        <th scope="col" onclick="sortColumn(2)">Jahr</th>
+                        <th scope="col" onclick="sortColumn(3)">Spielzeit</th>
+                        <th scope="col" onclick="sortColumn(4)">FSK</th>
+                        <th scope="col">Aktion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input id="inputfield-title" type="text" onkeydown="checkEnter(event)">
+                        </td>
+
+                        <td>
+                            <input id="inputfield-regisseur" type="text" onkeydown="checkEnter(event)">
+                        </td>
+                        <td>
+                            <input id="inputfield-year" type="text" onkeydown="checkEnter(event)">
+                        </td>
+
+                        <td>
+                            <input id="inputfield-time" type="text" onkeydown="checkEnter(event)">
+                        </td>
+                        <td>
+                            <input id="inputfield-fsk" type="text" onkeydown="checkEnter(event)">
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+[
+    {
+        "title": "Pulp Fiction",
+        "regisseur": "Quentin Tarantino",
+        "year": "1994",
+        "duration": "154",
+        "ageRestriction": "16"
+    },
+    {
+        "title": "Inglourious Basterds",
+        "regisseur": "Quentin Tarantino",
+        "year": "2009",
+        "duration": "153",
+        "ageRestriction": "16"
+    },
+    {
+        "title": "Reservoir Dogs",
+        "regisseur": "Quentin Tarantino",
+        "year": "1992",
+        "duration": "99",
+        "ageRestriction": "18"
+    },
+    {
+        "title": "Blade Runner",
+        "regisseur": "Ridley Scott",
+        "year": "1982",
+        "duration": "117",
+        "ageRestriction": "16"
+    }
+]
