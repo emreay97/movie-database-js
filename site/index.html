@@ -2,7 +2,7 @@
 <html lang="de" data-bs-theme="dark">
 
 <head>
-    <title>Film JSON Datenbank</title>
+    <title>Filmverwaltung</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="css/bootstrap/bootstrap.css" rel="stylesheet" type="text/css">
@@ -16,12 +16,15 @@
     <div class="container-fluid nav-container">
         <div class="row">
             <div class="col-12">
-                <p>Filmdatenbank</p> 
+                <p>Filmverwaltung</p> 
             </div>
         </div>
     </div>
 
         <div class="container-fluid movie-container">
+
+            <p>Tippe den Film ein und bestätige mit Enter</p>
+
             <table id="movie-table">
                 <thead>
                     <tr>
@@ -36,23 +39,24 @@
                 <tbody>
                     <tr>
                         <td>
-                            <input id="inputfield-title" type="text" onkeydown="checkEnter(event)">
+                            <input id="inputfield-title" type="text" onkeydown="enterPressRow(event)">
                         </td>
 
                         <td>
-                            <input id="inputfield-regisseur" type="text" onkeydown="checkEnter(event)">
+                            <input id="inputfield-regisseur" type="text" onkeydown="enterPressRow(event)">
                         </td>
                         <td>
-                            <input id="inputfield-year" type="text" onkeydown="checkEnter(event)">
+                            <input id="inputfield-year" type="text" onkeydown="enterPressRow(event)">
                         </td>
 
                         <td>
-                            <input id="inputfield-time" type="text" onkeydown="checkEnter(event)">
+                            <input id="inputfield-time" type="text" onkeydown="enterPressRow(event)">
                         </td>
                         <td>
-                            <input id="inputfield-fsk" type="text" onkeydown="checkEnter(event)">
+                            <input id="inputfield-fsk" type="text" onkeydown="enterPressRow(event)">
                         </td>
                         <td>
+                            <button type="button" id="enterButton">Enter</button>
                         </td>
                     </tr>
                 </tbody>

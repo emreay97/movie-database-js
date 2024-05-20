@@ -1,27 +1,4 @@
-fetch("media/movies.json")
-    .then((res) => res.text())
-    .then((text) => {
-        let json = JSON.parse(text);
-        console.log(json);
-        let tableBody = document.getElementById('movie-table').getElementsByTagName('tbody')[0];
-        for (let movie of json) {
-            let row = tableBody.insertRow();
-            let titleCell = row.insertCell();
-            let regisseurCell = row.insertCell();
-            let yearCell = row.insertCell();
-            let durationCell = row.insertCell();
-            let ageCell = row.insertCell();
-
-            addRemoveButton(row)
-
-            titleCell.appendChild(document.createTextNode(movie.title));
-            regisseurCell.appendChild(document.createTextNode(movie.regisseur));
-            yearCell.appendChild(document.createTextNode(movie.year));
-            durationCell.appendChild(document.createTextNode(movie.duration));
-            ageCell.appendChild(document.createTextNode(movie.ageRestriction));
-        }
-    })
-    .catch((e) => console.error(e));
+enterMouseClickListener()
 
 // Hier folgt der Code zu Einfügen neuer Filme
 
@@ -31,22 +8,40 @@ console.log(element.nodeName)
 
 
 // Wird aufgerufen wenn in der ersten Zeile eine Zelle mit Enter betätigt wird.
-function checkEnter(event) {
+function enterPressRow(event) {
     if (event.key === "Enter" || event.keyCode === 13) {
-        let dataArr = []
+       applyNewData()
+    }
+}
+
+function enterMouseClickListener(){
+    const enterButton = document.getElementById("enterButton");
+    enterButton.addEventListener("click", function(){
+        applyNewData();
+    })
+}
+
+
+
+function applyNewData(){
+    let dataArr = []
+    
         dataArr[0] = document.getElementById("inputfield-title").value
         dataArr[1] = document.getElementById("inputfield-regisseur").value
         dataArr[2] = document.getElementById("inputfield-year").value
         dataArr[3] = document.getElementById("inputfield-time").value
         dataArr[4] = document.getElementById("inputfield-fsk").value
-
-
+      
         //Prüft nach leeren Zellen in der ersten Zeile
         for (let i = 0; i < dataArr.length; i++) {
+            
             if (isEmpty(dataArr[i])) {
+               
                 alert("Zellen müssen befüllt sein");
+                
                 return;
             }
+            
         }
 
 
@@ -66,7 +61,6 @@ function checkEnter(event) {
 
         //Cursor auf das erste EIngabefeld setzen
         document.getElementById("inputfield-title").focus();
-    }
 }
 
 //Zellen der ersten Zeilen nach der Operation löschen
@@ -85,7 +79,11 @@ function append_line(data, row) {
 }
 
 function isEmpty(data) {
-    return (!data || data.length === 0);
+    if(data.length === 0){
+        return true;
+    }
+
+    return false;
 }
 //Reihe bei ButtonClick entfernen
 function removeRow(btn) {
