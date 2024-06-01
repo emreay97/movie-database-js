@@ -23,16 +23,14 @@
 
         <div class="container-fluid movie-container">
 
-            <p>Tippe den Film ein und bestätige mit Enter</p>
+            <p>Tippe den Film oder Serie ein und bestätige mit Enter</p>
 
             <table id="movie-table">
                 <thead>
                     <tr>
                         <th scope="col" onclick="sortColumn(0)">Title</th>
-                        <th scope="col" onclick="sortColumn(1)">Regisseur</th>
-                        <th scope="col" onclick="sortColumn(2)">Jahr</th>
-                        <th scope="col" onclick="sortColumn(3)">Spielzeit</th>
-                        <th scope="col" onclick="sortColumn(4)">FSK</th>
+                        <th scope="col" onclick="sortColumn(1)">Year</th>
+                        <th scope="col" onclick="sortColumn(2)">Rating (1-10)</th>
                         <th scope="col">Aktion</th>
                     </tr>
                 </thead>
@@ -42,19 +40,16 @@
                             <input id="inputfield-title" type="text" onkeydown="enterPressRow(event)">
                         </td>
 
-                        <td>
-                            <input id="inputfield-regisseur" type="text" onkeydown="enterPressRow(event)">
-                        </td>
+
                         <td>
                             <input id="inputfield-year" type="text" onkeydown="enterPressRow(event)">
                         </td>
 
                         <td>
-                            <input id="inputfield-time" type="text" onkeydown="enterPressRow(event)">
+                            <input id="inputfield-rating" type="text" onkeydown="enterPressRow(event)">
                         </td>
-                        <td>
-                            <input id="inputfield-fsk" type="text" onkeydown="enterPressRow(event)">
-                        </td>
+
+
                         <td>
                             <button type="button" id="enterButton">Enter</button>
                         </td>

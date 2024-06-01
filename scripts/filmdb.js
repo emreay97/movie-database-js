@@ -27,10 +27,9 @@ function applyNewData(){
     let dataArr = []
     
         dataArr[0] = document.getElementById("inputfield-title").value
-        dataArr[1] = document.getElementById("inputfield-regisseur").value
-        dataArr[2] = document.getElementById("inputfield-year").value
-        dataArr[3] = document.getElementById("inputfield-time").value
-        dataArr[4] = document.getElementById("inputfield-fsk").value
+        dataArr[1] = document.getElementById("inputfield-year").value
+        dataArr[2] = document.getElementById("inputfield-rating").value
+        
       
         //Prüft nach leeren Zellen in der ersten Zeile
         for (let i = 0; i < dataArr.length; i++) {
@@ -66,10 +65,10 @@ function applyNewData(){
 //Zellen der ersten Zeilen nach der Operation löschen
 function clearInputFields() {
     document.getElementById("inputfield-title").value = '';
-    document.getElementById("inputfield-regisseur").value = '';
     document.getElementById("inputfield-year").value = '';
-    document.getElementById("inputfield-time").value = '';
-    document.getElementById("inputfield-fsk").value = '';
+    document.getElementById("inputfield-rating").value = '';
+    
+
 }
 
 function append_line(data, row) {
