@@ -1,4 +1,4 @@
-enterMouseClickListener()
+
 
 // Hier folgt der Code zu Einfügen neuer Filme
 
@@ -14,12 +14,7 @@ function enterPressRow(event) {
     }
 }
 
-function enterMouseClickListener(){
-    const enterButton = document.getElementById("enterButton");
-    enterButton.addEventListener("click", function(){
-        applyNewData();
-    })
-}
+
 
 
 
