@@ -7,6 +7,15 @@ table button{
     width: 100%;
 }
 
+th{
+    background-color: rgba(24, 196, 164, 0.733);
+}
+
+th:hover{
+    background-color: rgba(24, 196, 164, 0.400);
+}
+
+
 .nav-container{
     text-align: center;
     height: 2em;

@@ -1,19 +1,16 @@
+// Don't mind the code its still needs refactoring
 
-
-// Hier folgt der Code zu Einfügen neuer Filme
 
 var element = document.querySelector("tbody");
 console.log(element.nodeName)
 
 
-
-// Wird aufgerufen wenn in der ersten Zeile eine Zelle mit Enter betätigt wird.
+// Is called when a cell in the first row is pressed with Enter.
 function enterPressRow(event) {
     if (event.key === "Enter" || event.keyCode === 13) {
        applyNewData()
     }
 }
-
 
 
 
@@ -26,21 +23,23 @@ function applyNewData(){
         dataArr[2] = document.getElementById("inputfield-rating").value
         
       
-        //Prüft nach leeren Zellen in der ersten Zeile
+        // Checks for empty cells in the first row
         for (let i = 0; i < dataArr.length; i++) {
             
             if (isEmpty(dataArr[i])) {
                
-                alert("Zellen müssen befüllt sein");
+                alert("Cells must be filled");
                 
                 return;
             }
             
+            
         }
-
-
-
-        //Iteriert durch die Zellen der Ersten Zeile und fügt es in eine neue Zeile ein -> append_line(data)
+        if(!isInputValid()){
+            return;
+        }
+        
+        // Iterates through the cells of the first row and adds them to a new row -> append_line(data)
         let tableRow = document.createElement("tr")
         for (let i = 0; i < dataArr.length; i++) {
             append_line(dataArr[i], tableRow)
@@ -53,11 +52,11 @@ function applyNewData(){
         element.appendChild(tableRow);
         clearInputFields();
 
-        //Cursor auf das erste EIngabefeld setzen
+        // Set cursor to the first input field
         document.getElementById("inputfield-title").focus();
 }
 
-//Zellen der ersten Zeilen nach der Operation löschen
+// Clear cells of the first row after the operation
 function clearInputFields() {
     document.getElementById("inputfield-title").value = '';
     document.getElementById("inputfield-year").value = '';
@@ -66,10 +65,27 @@ function clearInputFields() {
 
 }
 
-function append_line(data, row) {
-    let tableData = document.createElement("td");
-    tableData.innerText = data;
-    row.appendChild(tableData);
+// checks for invalid input
+function isInputValid(){
+
+    let dataArr = []
+    
+    dataArr[0] = document.getElementById("inputfield-title").value
+    dataArr[1] = document.getElementById("inputfield-year").value
+    dataArr[2] = document.getElementById("inputfield-rating").value
+
+    // local time should change with a more reliable api
+    if(dataArr[1] < 1888 || dataArr[1] > new Date().getFullYear()){
+        alert("Invalid year");
+        return false;
+    }
+
+    if(dataArr[2] < 0 || dataArr[2] > 10){
+        alert("Invalid rating range");
+        return false;
+    }
+    return true;
+    
 }
 
 function isEmpty(data) {
@@ -79,7 +95,15 @@ function isEmpty(data) {
 
     return false;
 }
-//Reihe bei ButtonClick entfernen
+
+function append_line(data, row) {
+    let tableData = document.createElement("td");
+    tableData.innerText = data;
+    row.appendChild(tableData);
+}
+
+
+// Remove row on button click
 function removeRow(btn) {
     var row = btn.parentNode.parentNode;
     row.parentNode.removeChild(row);
@@ -100,24 +124,24 @@ function addRemoveButton(row) {
 
 
 /*
-Bubble-Sort-Algorithmus. Title entspricht Spalte 0. Entsprechend der angeklickten Spalte wird die jeweilige Spalte sortiert.
-Die Zeilen werden durch iteriert, während der Iteration wird eine Zelle mit der Nachbars-Zelle verglichen.
-Durch ein Callback wird die Methode solange aufgerufen bis die Liste komplett durchsortiert ist.
-Zur Verdeutlichung rows[i].children[col] entspricht [Zeile][Spalte]
+Bubble sort algorithm. Title corresponds to column 0. The respective column is sorted according to the clicked column.
+The rows are iterated through, during the iteration a cell is compared with the neighboring cell.
+Through a callback, the method is called until the list is completely sorted.
+To illustrate rows[i].children[col] corresponds to [row][column]
 */
 function sortColumn(col) {
     let sorted = false
     let rows = document.querySelectorAll("tr")
-    // Fängt bei der zweiten Zeile an
+    // Starts at the second row
     for (let i = 2; i < rows.length - 1; i++) {
-        // Spalten mit Zahlen
+        // Columns with numbers
         if (col > 1) {
             if (Number(rows[i].children[col].innerHTML) > Number(rows[i + 1].children[col].innerHTML)) {
                 element.insertBefore(rows[i + 1], rows[i]);
                 sorted = true
             }
         }
-        // Spalten mit Strings
+        // Columns with strings
         else if (col < 2) {
 
             if ((String(rows[i].children[col].innerText).localeCompare(String(rows[i + 1].children[col].innerText))) > 0) {
@@ -133,8 +157,4 @@ function sortColumn(col) {
     } else {
         return;
     }
-
-
 }
-
-
