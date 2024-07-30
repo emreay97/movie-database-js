@@ -14,6 +14,56 @@ function enterPressRow(event) {
 
 
 
+function hamburgerMenuControl(){
+    let hamburgerButton = document.getElementById("hamburger")
+    
+    hamburgerButton.addEventListener("mouseover", function (){
+
+    let navContainer = document.getElementById("menubox") 
+    let ulNode = document.createElement("ul")
+    let liNodeBooks = document.createElement("li")
+    liNodeBooks.innerHTML = "Books"
+    
+    let liNodeMovies = document.createElement("li")
+    liNodeMovies.innerHTML = "Movies"
+
+    let liNodeSeries = document.createElement("li")
+    liNodeSeries.innerHTML = "Series"
+
+    ulNode.appendChild(liNodeBooks)
+    ulNode.appendChild(liNodeMovies)
+    ulNode.appendChild(liNodeSeries)
+
+    ulNode.id = "ulID"
+    ulNode.style.color = "black"
+    ulNode.style.position = "absolute"
+    ulNode.style.right = "1em"
+    ulNode.style.top = "2em"
+    ulNode.style.listStyle = "none"
+    ulNode.style.padding = "0%"
+    
+    ulNode.style.backgroundColor = "white"
+    ulNode.style.border = "solid 2px white"
+    ulNode.style.opacity = "100%"
+    ulNode.style.width = "10%"
+    ulNode.style.borderRadius = "4px"
+    menubox.appendChild(ulNode)
+
+    
+        
+    } )
+
+    hamburgerButton.addEventListener("mouseout", function (){
+
+       let ulNode = document.getElementById("ulID")
+       if(ulNode){
+        ulNode.remove()
+       } 
+
+    })
+
+}
+hamburgerMenuControl()
 
 function applyNewData(){
     let dataArr = []

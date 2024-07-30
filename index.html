@@ -13,19 +13,27 @@
 <body>
     <script defer src="scripts/filmdb.js"></script>
 
-    <div class="container-fluid nav-container">
+    <nav class="container-fluid nav-container" id="nav-container">
+        <div id="menubox">
+            <input id="hamburger" type="image" src="media/hamburger.svg">
+        </div>
+
         <div class="row">
             <div class="col-12">
                 <p>Personal Movie-Management</p> 
+               
             </div>
         </div>
-    </div>
+
+
+    </nav>
 
         <div class="container-fluid movie-container">
 
             <p>Enter your movie you want to add and confirm with the return key.</p>
             <p>Note: This page is still under progress and the very early stage.</p>
 
+            <input id="searchbar" type="text">
             <table id="movie-table">
                 <thead>
                     <tr>
