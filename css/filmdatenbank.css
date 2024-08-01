@@ -1,59 +1,76 @@
-table,th,td{
+table,
+th,
+td {
     border: 1px solid;
 }
 
 
-table button{
+table button {
     width: 100%;
 }
-#menubox{
+
+#menubox {
     position: relative;
-    
+
 }
 
-#hamburger{
+#hamburger {
     position: absolute;
     right: 1em;
-    
+
 }
 
 
-th{
+th {
     background-color: rgba(24, 196, 164, 0.733);
 }
 
-th:hover{
+th:hover {
     background-color: rgba(24, 196, 164, 0.400);
 }
 
-#searchbar{
+#searchbar {
     margin-bottom: 2em;
-    
+
 }
 
-.nav-container{
-    
+.nav-container {
+
     text-align: center;
     height: 3em;
     background-color: rgba(24, 196, 164, 0.733);
     width: 100%;
-    
+    border-bottom-left-radius: 10em;
+    border-bottom-right-radius: 10em;
+
 }
 
-.movie-container{
-   
+.nav-container .navlink {
+    color: white;
+    padding: 2em;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.nav-container .navlink:hover {
+    color: rgba(255, 255, 255, 0.47);
+    font-size: large;
+}
+
+.table-container {
+
     text-align: center;
-    margin-top:3rem;
+    margin-top: 3rem;
     font-size: 1rem;
 }
 
-#movie-table{
-    
+table {
+
     margin-left: auto;
     margin-right: auto;
     font-size: 1.5em;
 }
 
-.navbar  p{
-font-size: 2em;
+.navbar p {
+    font-size: 2em;
 }
